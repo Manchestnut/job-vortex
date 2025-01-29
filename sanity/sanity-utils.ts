@@ -14,6 +14,6 @@ export async function getJobs(): Promise<Job[]>{
             job_location
         }`, 
         {},
-        { next: { revalidate: 10 } }
+        { cache: "no-store" }
     )
 }
