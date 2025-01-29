@@ -45,7 +45,7 @@ export default function Home() {
 
       {/* Industries Served */}
       <div className="w-fit mx-auto py-20 px-4">
-        <h1 className="text-center text-6xl font-extrabold mb-20">Industries we've served</h1>
+        <h1 className="text-center text-6xl font-extrabold mb-20">Industries we&apos;ve served</h1>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
           <div className="bg-blue-800 text-white font-semibold text-center text-md rounded-2xl py-10 ">
           <MdOutlineEngineering className="mx-auto text-6xl pb-2"/>
