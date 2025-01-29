@@ -9,7 +9,7 @@ export default function JobButton() {
       <motion.div
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
-        className="bg-[#073D7F] py-4 px-6 rounded-xl w-fit"
+        className="bg-[#073D7F] py-4 px-6 rounded-xl min-w-[225px]"
       >
           <Link href={`hire`} target="_blank" rel="noopener noreferrer">
             <h1 className="text-2xl font-semibold">I want to hire</h1>
