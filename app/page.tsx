@@ -1,101 +1,91 @@
 import Image from "next/image";
+import { FaArrowRightLong } from "react-icons/fa6";
+import { AiOutlineMenu } from "react-icons/ai";
+import { MdOutlineEngineering } from "react-icons/md";
+import { BiHealth } from "react-icons/bi";
+import { MdOutlineRoomService } from "react-icons/md";
+import { MdOutlinePrecisionManufacturing } from "react-icons/md";
+import { TbServerCog } from "react-icons/tb";
+import { FaChartLine } from "react-icons/fa6";
+import { FaShoppingCart } from "react-icons/fa";
+import { FaBullhorn } from "react-icons/fa6";
+import JobButton from "./JobButton";
+import HireButton from "./HireButton";
+import NavBar from "./NavBar";
+
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="bg-[#F1F1F1]">
+    {/* Navigation */}
+      <NavBar />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    {/* Landing */}
+    <main className="">
+      <div className="text-center w-fit mx-auto py-10 text-gray-800">
+        <h1 className="font-extrabold md:text-6xl text-4xl py-8">Connecting talent <br/>with< br/> opportunity.</h1>
+        <p className="text-2xl font-light">Let us help you find your perfect match!</p>
+      </div>
+      <div className="grid md:grid-cols-2 grid-cols-1 gap-10 py-12 w-fit mx-auto text-[#F1F1F1]">
+          <JobButton />
+          <HireButton />
+      </div>
+
+      {/* About Us */}
+      <div className="lg:p-24 md:p-12 p-6 min-w-72">
+        <div className="bg-[#073D7F] md:rounded-2xl rounded-br-[150px] rounded-tl-[100px] lg:px-20 p-10 lg:grid lg:grid-cols-2 md:grid-cols-1">
+          <div className="md:pt-10">
+            <h1 className="lg:text-6xl md:text-3xl text-2xl font-extrabold pb-14 text-white">Experts in Recruitment <br/>Across Diverse Industries</h1>
+            <p className="lg:text-2xl  text-white md:pb-12">
+            Job Vortex is your trusted partner in recruitment, offering honest and tailored support to connect job seekers with the right employers. <br/> <br/>Our experienced team specializes in services such as job postings, candidate sourcing, interviewing, and specialized headhunting.
+            </p>
+          </div>
+          <div className="md:ml-auto">
+          <Image src="/about.png" alt="about img" width={500} height={500} className="relative rounded-br-[100px] -bottom-10 -right-10 lg:-top-10 lg:-right-20 lg:rounded-bl-full lg:rounded-tl-none lg:rounded-br-none "></Image>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+
+      {/* Industries Served */}
+      <div className="w-fit mx-auto py-20 px-4">
+        <h1 className="text-center text-6xl font-extrabold mb-20">Industries we've served</h1>
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
+          <div className="bg-blue-800 text-white font-semibold text-center text-md rounded-2xl py-10 ">
+          <MdOutlineEngineering className="mx-auto text-6xl pb-2"/>
+            <h3>Engineering</h3>
+          </div>
+          <div className="bg-blue-800 text-white font-semibold text-center text-md rounded-2xl py-10">
+          <BiHealth className="mx-auto text-6xl pb-2"/>
+            <h3>Healthcare</h3>
+          </div>
+          <div className="bg-blue-800 text-white font-semibold text-center text-md rounded-2xl py-10">
+          <MdOutlineRoomService className="mx-auto text-6xl pb-2"/>
+            <h3>Hospitality</h3>
+          </div>
+          <div className="bg-blue-800 text-white font-semibold text-center text-md rounded-2xl py-10">
+          <MdOutlinePrecisionManufacturing className="mx-auto text-6xl pb-2"/>
+            <h3>Manufacturing</h3>
+          </div>
+          <div className="bg-blue-800 text-white font-semibold text-center text-md rounded-2xl py-10">
+          <TbServerCog className="mx-auto text-6xl pb-2"/>
+            <h3>Information Technology</h3>
+          </div>
+          <div className="bg-blue-800 text-white font-semibold text-center text-md rounded-2xl py-10">
+          <FaChartLine className="mx-auto text-6xl pb-2"/>
+            <h3>Finance</h3>
+          </div>
+          <div className="bg-blue-800 text-white font-semibold text-center text-md rounded-2xl py-10">
+          <FaShoppingCart className="mx-auto text-6xl pb-2"/>
+            <h3>E-commerce and Retail</h3>
+          </div>
+          <div className="bg-blue-800 text-white font-semibold text-center text-md rounded-2xl py-10">
+          <FaBullhorn className="mx-auto text-6xl pb-2"/>
+            <h3>Digital Marketing</h3>
+          </div>
+        </div>
+      </div>
+    </main>
     </div>
+
   );
 }
