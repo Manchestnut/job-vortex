@@ -11,7 +11,6 @@ import JobButton from "./JobButton";
 import HireButton from "./HireButton";
 import NavBar from "./NavBar";
 
-
 export default function Home() {
   return (
     <div className="bg-[#F1F1F1]">
