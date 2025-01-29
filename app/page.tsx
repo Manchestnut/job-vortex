@@ -1,6 +1,4 @@
 import Image from "next/image";
-import { FaArrowRightLong } from "react-icons/fa6";
-import { AiOutlineMenu } from "react-icons/ai";
 import { MdOutlineEngineering } from "react-icons/md";
 import { BiHealth } from "react-icons/bi";
 import { MdOutlineRoomService } from "react-icons/md";
