@@ -12,6 +12,8 @@ export async function getJobs(): Promise<Job[]>{
             "slug": slug.current,
             job_description,
             job_location
-        }`
+        }`, 
+        {},
+        { next: { revalidate: 10 } }
     )
 }
