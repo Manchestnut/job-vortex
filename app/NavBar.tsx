@@ -8,9 +8,7 @@ export default function NavBar() {
     return(
         <nav className="bg-blue-100 p-3 flex justify-between items-center py-6">
           <Link href={'/'} rel="noopener noreferrer">
-            <div className="w-[150px] h-[50px] relative">
-                <Image src="/logo.png" alt="logo" width={150} height={50} priority className="object-contain"></Image>
-            </div>
+            <Image src="/logo.png" alt="logo" width={150} height={50.98} priority className="object-contain"></Image>
           </Link>  
           <AiOutlineMenu className="text-3xl fill-blue-900 lg:hidden"/>
           <div className="lg:flex gap-6 px-4 hidden">
