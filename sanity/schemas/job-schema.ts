@@ -12,7 +12,7 @@ const job = {
             name: 'slug',
             title: 'Slug',
             type: 'slug',
-            options: { source: 'name' }
+            options: { source: 'job_title' }
         },
         {
             name: 'job_description',
