@@ -13,7 +13,7 @@ export default async function Job() {
             <h1 className="text-5xl font-bold text-center mb-4 text-gray-800">Job search</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-3 py-5 w-fit mx-auto">
                 {jobs.map((job) => 
-                    <Link key={job._id} href={`jobs/${job.slug}`} rel="noopener noreferrer">
+                    <Link key={job._id} href={`/jobs/${job.slug}`} rel="noopener noreferrer">
                     <motion.div 
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
