@@ -4,7 +4,9 @@ import { PortableText } from "next-sanity";
 
 
 type Props = {
-    params: { job: string}
+    params: {
+      job: string;
+    };
   };
 
 export default async function Job({ params }: Props) {
