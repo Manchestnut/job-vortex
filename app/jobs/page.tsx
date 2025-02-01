@@ -1,8 +1,6 @@
 import { getJobs } from "@/sanity/sanity-utils"
 import NavBar from "../NavBar";
-import Link from "next/link";
 import Footer from "../Footer";
-import { CiLocationOn } from "react-icons/ci";
 import JobList from "../JobList";
 
 export default async function Job() {
