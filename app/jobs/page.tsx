@@ -1,26 +1,20 @@
 import { getJobs } from "@/sanity/sanity-utils"
 import NavBar from "../NavBar";
 import Link from "next/link";
+import Footer from "../Footer";
+import { CiLocationOn } from "react-icons/ci";
+import JobList from "../JobList";
 
 export default async function Job() {
     const jobs = await getJobs();
     return(
         <>
         <NavBar />
-        <div className="px-6 pt-10">
-            <h1 className="text-5xl font-bold text-center mb-4 text-gray-800">Job search</h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-3 py-5 w-fit mx-auto  border-t-2 border-t-black">
-                {jobs.map((job) => 
-                    <Link key={job._id} href={`/jobs/${job.slug}`} rel="noopener noreferrer">
-                    <div className="bg-blue-100 p-4 m-3 rounded max-w-[450px] hover:shadow-lg cursor-pointer active:shadow-md transition duration-300">
-                        <h1 className="text-gray-800">{job.job_title}</h1>
-                        <h3 className="text-gray-500 mb-8">{job.job_location}</h3>
-                    </div>
-                    </Link>
-                )}
-            </div>
+        <div className="px-6 pt-10 bg-gray-50 min-h-screen">
+          <h1 className="text-5xl font-bold text-center mb-8 text-gray-800">Job Search</h1>
+          <JobList jobs={jobs} />
         </div>
-
-        </>
+        <Footer />
+      </>
     )
 }

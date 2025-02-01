@@ -26,11 +26,11 @@ export async function POST(req: Request) {
       },
     });
 
-    // Use dynamic job_title in the subject
+    
     const mailOptions = {
       from: process.env.EMAIL_USER, 
       to: process.env.RECIPIENT_EMAIL, 
-      subject: `New Job Application for ${job_title} - ${full_name}`, // Dynamic subject
+      subject: `New Job Application for ${job_title} - ${full_name}`,
       text: `You received a new job application for ${job_title}.
 
       Name: ${full_name}
@@ -48,7 +48,7 @@ export async function POST(req: Request) {
       ],
     };
 
-    // Send the email
+    
     await transporter.sendMail(mailOptions);
 
     return NextResponse.json({ message: "Application submitted successfully!" }, { status: 200 });

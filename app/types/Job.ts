@@ -5,6 +5,7 @@ export type Job = {
     _createdAt: Date;
     job_title: string;
     slug: string;
+    job_category: string;
     job_description: PortableTextBlock[];
     job_location: string;
 }

@@ -10,6 +10,7 @@ export async function getJobs(): Promise<Job[]>{
             _createdAt,
             job_title,
             "slug": slug.current,
+            job_category,
             job_description,
             job_location
         }`, 
@@ -27,6 +28,7 @@ export async function getJob(slug: string): Promise<Job> {
             _createdAt,
             job_title,
             "slug": slug.current,
+            job_category,
             job_description,
             job_location
         }`,

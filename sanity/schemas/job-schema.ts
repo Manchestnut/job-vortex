@@ -15,6 +15,11 @@ const job = {
             options: { source: 'job_title' }
         },
         {
+            name: 'job_category',
+            title: 'Job Category',
+            type: 'string'
+        },
+        {
             name: 'job_description',
             title: 'Job Description',
             type: 'array',

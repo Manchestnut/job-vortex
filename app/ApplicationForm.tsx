@@ -30,7 +30,7 @@ const JobApplicationForm: React.FC<JobApplicationFormProps> = ({ job }) => {
     formDataObj.append("full_name", formData.full_name);
     formDataObj.append("email", formData.email);
     formDataObj.append("contact_number", formData.contact_number);
-    formDataObj.append("job_title", job.job_title); // Pass job title to API
+    formDataObj.append("job_title", job.job_title);
     if (formData.resume) {
       formDataObj.append("resume", formData.resume);
     }

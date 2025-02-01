@@ -10,6 +10,7 @@ import { FaBullhorn } from "react-icons/fa6";
 import JobButton from "./JobButton";
 import HireButton from "./HireButton";
 import NavBar from "./NavBar";
+import Footer from "./Footer";
 
 export default function Home() {
   return (
@@ -38,7 +39,7 @@ export default function Home() {
             </p>
           </div>
           <div className="md:ml-auto">
-          <Image src="/about.png" alt="about img" width={500} height={500} className="relative rounded-br-[100px] -bottom-10 -right-10 lg:-top-10 lg:-right-20 lg:rounded-bl-full lg:rounded-tl-none lg:rounded-br-none "></Image>
+          <Image src="/about.png" alt="about img" width={500} height={500} className="relative rounded-br-[100px] -bottom-10 -right-10 lg:-top-10 lg:-right-20 lg:rounded-bl-full lg:rounded-tl-none lg:rounded-br-none" priority></Image>
           </div>
         </div>
       </div>
@@ -82,6 +83,7 @@ export default function Home() {
         </div>
       </div>
     </main>
+    <Footer />
     </div>
 
   );
