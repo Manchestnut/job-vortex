@@ -29,7 +29,7 @@ const JobApplicationForm: React.FC<JobApplicationFormProps> = ({ job }) => {
     e.preventDefault();
 
     // reCAPTCHA validation
-    const grecaptcha = (window as any).grecaptcha;
+    const grecaptcha = window.grecaptcha;
 
     if (!grecaptcha) {
       alert("reCAPTCHA failed to load.");
