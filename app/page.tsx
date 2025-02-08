@@ -14,6 +14,7 @@ import Footer from "./Footer";
 
 export default function Home() {
   return (
+    <>
     <div className="bg-[#F1F1F1]">
     {/* Navigation */}
       <NavBar />
@@ -85,6 +86,6 @@ export default function Home() {
     </main>
     <Footer />
     </div>
-
+    </>
   );
 }

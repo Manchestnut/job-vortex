@@ -12,8 +12,8 @@ export default function NavBar() {
           </Link>  
           <AiOutlineMenu className="text-3xl fill-blue-900 lg:hidden"/>
           <div className="lg:flex gap-6 px-4 hidden">
-            <a><button className="bg-[#F1F1F1] px-3 py-1 rounded-xl flex items-center gap-2 text-xl">Apply <FaArrowRightLong /></button></a>
-            <a><button className="bg-[#F1F1F1] px-3 py-1 rounded-xl flex items-center gap-2 text-xl">Hire <FaArrowRightLong /></button></a>
+            <Link href={`/jobs/`} rel="noopener noreferrer"><button className="bg-[#F1F1F1] px-3 py-1 rounded-xl flex items-center gap-2 text-xl">Apply <FaArrowRightLong /></button></Link>
+            <Link href={`/hire/`} rel="noopener noreferrer"><button className="bg-[#F1F1F1] px-3 py-1 rounded-xl flex items-center gap-2 text-xl">Hire <FaArrowRightLong /></button></Link>
           </div>
         </nav>
     )

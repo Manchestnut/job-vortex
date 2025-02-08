@@ -30,7 +30,7 @@ export default function JobList({ jobs }: JobListProps) {
         {filteredJobs.length > 0 ? (
           filteredJobs.map((job) => (
             <Link key={job._id} href={`/jobs/${job.slug}`} rel="noopener noreferrer">
-              <div className="bg-white py-5 px-5 mt-2 flex flex-col md:flex-row justify-between items-start md:items-center rounded-lg shadow-md hover:shadow-lg cursor-pointer transition duration-300">
+              <div className="bg-white py-5 px-5 mt-2 flex flex-col md:flex-row justify-between items-start md:items-center rounded shadow hover:shadow-md cursor-pointer transition duration-300">
                 <h2 className="text-lg font-semibold text-gray-800 md:w-1/3">{job.job_title}</h2>
                 <p className="text-gray-600 md:w-1/3">{job.job_category}</p>
                 <p className="text-gray-600 md:w-1/3 flex items-center">

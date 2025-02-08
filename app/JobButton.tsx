@@ -6,7 +6,7 @@ import { MdOutlineContentPasteSearch } from "react-icons/md";
 
 export default function JobButton() {
     return (
-      <Link href="/jobs" target="_blank" rel="noopener noreferrer">
+      <Link href="/jobs" rel="noopener noreferrer">
       <motion.div
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}

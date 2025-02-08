@@ -23,9 +23,37 @@ const JobApplicationForm: React.FC<JobApplicationFormProps> = ({ job }) => {
     }
   };
 
+
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // reCAPTCHA validation
+    const grecaptcha = (window as any).grecaptcha;
+
+    if (!grecaptcha) {
+      alert("reCAPTCHA failed to load.");
+      return;
+    }
+
+    const token = await grecaptcha.execute(
+      process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!,
+      { action: "submit" }
+    );
+
+    const recaptchaResponse = await fetch("/api/validateRecaptcha", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ token }),
+    });
+
+    const recaptchaData = await recaptchaResponse.json();
+    if (!recaptchaData.success) {
+      alert("reCAPTCHA validation failed. Please try again.");
+      return;
+    }
     
+    // actual form
     const formDataObj = new FormData();
     formDataObj.append("full_name", formData.full_name);
     formDataObj.append("email", formData.email);
@@ -46,7 +74,6 @@ const JobApplicationForm: React.FC<JobApplicationFormProps> = ({ job }) => {
       alert("Error submitting application.");
     }
   };
-
   return (
     <div className="border-2 border-gray-300 rounded-lg p-6 shadow-lg">
       <h1 className="text-xl font-bold mb-6">Submit your Application</h1>

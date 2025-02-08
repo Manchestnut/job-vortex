@@ -6,7 +6,7 @@ import { LuUserRoundSearch } from "react-icons/lu";
 
 export default function JobButton() {
     return (
-      <Link href={`hire`} target="_blank" rel="noopener noreferrer">
+      <Link href={`hire`} rel="noopener noreferrer">
       <motion.div
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
