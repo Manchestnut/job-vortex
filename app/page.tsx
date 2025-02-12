@@ -31,7 +31,17 @@ export default function Home() {
       </div>
 
       {/* About Us */}
-      <div className="lg:p-24 md:p-12 p-6 min-w-72">
+      <div className="w-fit mx-auto md:flex gap-6 py-36 px-8">
+        <div className="max-w-[550px] mx-auto">
+          <h1 className="md:text-4xl text-2xl font-extrabold text-gray-800">Experts in Recruitment Across Diverse Industries</h1>
+          <div className="md:text-xl text-gray-800 pb-8 pt-4 md:pb-4">
+            <p className="pb-2">Job Vortex is your trusted partner in recruitment, offering honest and tailored support to connect job seekers with the right employers.</p>
+            <p>Our experienced team specializes in services such as job postings, candidate sourcing, interviewing, and specialized headhunting.</p>
+          </div>
+        </div>
+        <Image src="/interview.svg" alt="about img" width={500} height={500} priority></Image>
+      </div>
+      {/* <div className="lg:p-24 md:p-12 p-6 min-w-72">
         <div className="bg-[#073D7F] md:rounded-2xl rounded-br-[150px] rounded-tl-[100px] lg:px-20 p-10 lg:grid lg:grid-cols-2 md:grid-cols-1">
           <div className="md:pt-10">
             <h1 className="lg:text-6xl md:text-3xl text-2xl font-extrabold pb-14 text-white">Experts in Recruitment <br/>Across Diverse Industries</h1>
@@ -43,10 +53,11 @@ export default function Home() {
           <Image src="/about.png" alt="about img" width={500} height={500} className="relative rounded-br-[100px] -bottom-10 -right-10 lg:-top-10 lg:-right-20 lg:rounded-bl-full lg:rounded-tl-none lg:rounded-br-none" priority></Image>
           </div>
         </div>
-      </div>
+      </div> */}
+    
 
       {/* Industries Served */}
-      <div className="w-fit mx-auto py-20 px-4">
+      {/* <div className="w-fit mx-auto py-20 px-4">
         <h1 className="text-center text-6xl font-extrabold mb-20">Industries we&apos;ve served</h1>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
           <div className="bg-blue-800 text-white font-semibold text-center text-md rounded-2xl py-10 ">
@@ -82,7 +93,7 @@ export default function Home() {
             <h3>Digital Marketing</h3>
           </div>
         </div>
-      </div>
+      </div> */}
     </main>
     <Footer />
     </div>

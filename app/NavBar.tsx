@@ -16,7 +16,7 @@ export default function NavBar() {
           <Link href={'/'} rel="noopener noreferrer">
             <Image src="/logo.png" alt="logo" width={150} height={50.98} priority className="object-contain"></Image>
           </Link>  
-          <AiOutlineMenu className="text-3xl fill-blue-900 lg:hidden" onClick={handleToggle}/>
+          <AiOutlineMenu className="text-3xl fill-blue-900 md:hidden" onClick={handleToggle}/>
 
           {/* Desktop menu */}
           <div className="hidden md:flex md:gap-2">

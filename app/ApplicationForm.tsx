@@ -122,7 +122,7 @@ const JobApplicationForm: React.FC<JobApplicationFormProps> = ({ job }) => {
             required
           />
         </div>
-        <button type="submit" className="w-full bg-blue-500 text-white rounded-lg p-3">
+        <button type="submit" className="w-full bg-[#154c79] text-white rounded-lg p-3">
           Submit
         </button>
       </form>
