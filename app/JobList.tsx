@@ -18,15 +18,14 @@ export default function JobList({ jobs }: JobListProps) {
     );
   
     return (
-      <div className="px-3 py-2 w-full mx-auto border-t-2 border-t-gray-300">
+      <div className="px-3 py-2 w-full mx-auto relative ">
         <input
           type="text"
-          placeholder="Search jobs by title, field, or location"
+          placeholder="Search jobs..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className="w-full px-4 py-2 border rounded-md mb-4"
         />
-        
         {filteredJobs.length > 0 ? (
           filteredJobs.map((job) => (
             <Link key={job._id} href={`/jobs/${job.slug}`} rel="noopener noreferrer">

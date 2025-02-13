@@ -75,7 +75,7 @@ const JobApplicationForm: React.FC<JobApplicationFormProps> = ({ job }) => {
     }
   };
   return (
-    <div className="border-2 border-gray-300 rounded p-6 shadow-lg">
+    <div className="border-2 border-gray-300 rounded p-6">
       <h1 className="text-xl font-bold mb-6">Submit your Application</h1>
       <form className="space-y-4" onSubmit={handleSubmit}>
         <div>

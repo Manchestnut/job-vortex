@@ -8,8 +8,8 @@ export default async function Job() {
     return(
         <>
         <NavBar />
-        <div className="px-6 pt-10 bg-gray-50 min-h-screen">
-          <h1 className="text-5xl font-bold text-center mb-8 text-gray-800">Job Search</h1>
+        <div className="md:px-6 pt-10 bg-gray-50 min-h-screen">
+          <h1 className="md:text-5xl text-3xl font-bold text-center mb-8 text-gray-800">Job Search</h1>
           <JobList jobs={jobs} />
         </div>
         <Footer />
