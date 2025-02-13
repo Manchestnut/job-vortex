@@ -75,7 +75,7 @@ const JobApplicationForm: React.FC<JobApplicationFormProps> = ({ job }) => {
     }
   };
   return (
-    <div className="border-2 border-gray-300 rounded-lg p-6 shadow-lg">
+    <div className="border-2 border-gray-300 rounded p-6 shadow-lg">
       <h1 className="text-xl font-bold mb-6">Submit your Application</h1>
       <form className="space-y-4" onSubmit={handleSubmit}>
         <div>
@@ -83,7 +83,7 @@ const JobApplicationForm: React.FC<JobApplicationFormProps> = ({ job }) => {
           <input
             type="text"
             name="full_name"
-            className="w-full border-2 border-gray-300 rounded-lg p-3 focus:outline-none focus:border-blue-500"
+            className="w-full border-2 border-gray-300 rounded p-3 focus:outline-none focus:border-blue-500"
             value={formData.full_name}
             onChange={handleChange}
             required
@@ -94,7 +94,7 @@ const JobApplicationForm: React.FC<JobApplicationFormProps> = ({ job }) => {
           <input
             type="email"
             name="email"
-            className="w-full border-2 border-gray-300 rounded-lg p-3 focus:outline-none focus:border-blue-500"
+            className="w-full border-2 border-gray-300 rounded p-3 focus:outline-none focus:border-blue-500"
             value={formData.email}
             onChange={handleChange}
             required
@@ -105,7 +105,7 @@ const JobApplicationForm: React.FC<JobApplicationFormProps> = ({ job }) => {
           <input
             type="tel"
             name="contact_number"
-            className="w-full border-2 border-gray-300 rounded-lg p-3 focus:outline-none focus:border-blue-500"
+            className="w-full border-2 border-gray-300 rounded p-3 focus:outline-none focus:border-blue-500"
             value={formData.contact_number}
             onChange={handleChange}
             required
@@ -117,12 +117,12 @@ const JobApplicationForm: React.FC<JobApplicationFormProps> = ({ job }) => {
             type="file"
             name="resume"
             accept="application/pdf"
-            className="w-full border-2 border-gray-300 rounded-lg p-3 focus:outline-none focus:border-blue-500"
+            className="w-full border-2 border-gray-300 rounded p-3 focus:outline-none focus:border-blue-500"
             onChange={handleChange}
             required
           />
         </div>
-        <button type="submit" className="w-full bg-[#154c79] text-white rounded-lg p-3">
+        <button type="submit" className="w-full bg-[#154c79] text-white rounded p-3">
           Submit
         </button>
       </form>

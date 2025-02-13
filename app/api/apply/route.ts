@@ -27,10 +27,10 @@ export async function POST(req: Request) {
     });
 
     
-    const mailOptions = {
+    const mailOptionsToCompany = {
       from: process.env.EMAIL_USER, 
       to: process.env.RECIPIENT_EMAIL, 
-      subject: `New Job Application for ${job_title} - ${full_name}`,
+      subject: `${job_title} - ${full_name}`,
       text: `You received a new job application for ${job_title}.
 
       Name: ${full_name}
@@ -48,8 +48,17 @@ export async function POST(req: Request) {
       ],
     };
 
+    const mailOptionsToApplicant = {
+      from: process.env.RECIPIENT_EMAIL, 
+      to: email, 
+      subject: `${job_title} - ${full_name}`,
+      text: `You have successfully applied for the position of ${job_title}.
+      `
+    };
+
     
-    await transporter.sendMail(mailOptions);
+    await transporter.sendMail(mailOptionsToCompany);
+    await transporter.sendMail(mailOptionsToApplicant);
 
     return NextResponse.json({ message: "Application submitted successfully!" }, { status: 200 });
   } catch (error) {
