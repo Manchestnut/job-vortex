@@ -174,7 +174,7 @@ export default function Employer() {
                 />
                 </div>
                 <div>
-                <button type="submit" className="w-full bg-[#154c79] text-white rounded p-3">
+                <button type="submit" className="w-1/3 bg-[#154c79] text-white rounded p-3">
                     Submit
                 </button>
                 </div>
