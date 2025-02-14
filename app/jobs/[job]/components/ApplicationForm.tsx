@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React, { useState } from "react";
 
 interface JobApplicationFormProps {
@@ -22,8 +22,6 @@ const JobApplicationForm: React.FC<JobApplicationFormProps> = ({ job }) => {
       setFormData({ ...formData, [e.target.name]: e.target.value });
     }
   };
-
-
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -52,7 +50,7 @@ const JobApplicationForm: React.FC<JobApplicationFormProps> = ({ job }) => {
       alert("reCAPTCHA validation failed. Please try again.");
       return;
     }
-    
+
     // actual form
     const formDataObj = new FormData();
     formDataObj.append("full_name", formData.full_name);
@@ -122,7 +120,10 @@ const JobApplicationForm: React.FC<JobApplicationFormProps> = ({ job }) => {
             required
           />
         </div>
-        <button type="submit" className="w-full bg-[#154c79] text-white rounded p-3">
+        <button
+          type="submit"
+          className="w-full bg-[#154c79] text-white rounded p-3"
+        >
           Submit
         </button>
       </form>

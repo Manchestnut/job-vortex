@@ -23,7 +23,7 @@ export default function NavBar() {
             <Link href={`/jobs/`} rel="noopener noreferrer"><button className="px-3 py-1 rounded-lg flex items-center gap-2 text-lg text-gray-700 hover:underline">Apply <FaArrowRightLong className="text-sm"/></button></Link>
             <Link href={`/employer/`} rel="noopener noreferrer"><button className="px-3 py-1 rounded-lg flex items-center gap-2 text-lg text-gray-700 hover:underline">Hire <FaArrowRightLong className="text-sm"/></button></Link>
             <Link href={`/`} rel="noopener noreferrer"><button className="px-3 py-1 rounded-lg flex items-center gap-2 text-lg text-gray-700 hover:underline">About</button></Link>
-            <Link href={`/`} rel="noopener noreferrer"><button className="px-3 py-1 rounded-lg flex items-center gap-2 text-lg text-gray-700 hover:underline">Contact</button></Link>
+            <Link href={`/contact`} rel="noopener noreferrer"><button className="px-3 py-1 rounded-lg flex items-center gap-2 text-lg text-gray-700 hover:underline">Contact</button></Link>
           </div>
 
           {/* Mobile menu */}
@@ -32,7 +32,7 @@ export default function NavBar() {
               <Link href={`/jobs/`} rel="noopener noreferrer"><button className="px-3 py-1 rounded-lg flex items-center gap-2 text-lg text-gray-700 hover:underline">Apply <FaArrowRightLong className="text-sm"/></button></Link>
               <Link href={`/employer/`} rel="noopener noreferrer"><button className="px-3 py-1 rounded-lg flex items-center gap-2 text-lg text-gray-700 hover:underline">Hire <FaArrowRightLong className="text-sm"/></button></Link>
               <Link href={`/`} rel="noopener noreferrer"><button className="px-3 py-1 rounded-lg flex items-center gap-2 text-lg text-gray-700 hover:underline">About</button></Link>
-              <Link href={`/`} rel="noopener noreferrer"><button className="px-3 py-1 rounded-lg flex items-center gap-2 text-lg text-gray-700 hover:underline">Contact</button></Link>
+              <Link href={`/contact`} rel="noopener noreferrer"><button className="px-3 py-1 rounded-lg flex items-center gap-2 text-lg text-gray-700 hover:underline">Contact</button></Link>
             </div>
           )}
         </nav>

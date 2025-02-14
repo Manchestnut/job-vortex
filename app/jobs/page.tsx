@@ -1,7 +1,7 @@
 import { getJobs } from "@/sanity/sanity-utils"
-import NavBar from "../NavBar";
-import Footer from "../Footer";
-import JobList from "../JobList";
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
+import JobList from "./components/JobList";
 
 export default async function Job() {
     const jobs = await getJobs();

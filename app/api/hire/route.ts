@@ -3,9 +3,9 @@ import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
   try {
-    const { name, email, message } = await req.json();
+    const { name, email, company_name, job_title, message } = await req.json();
 
-    if (!name || !email || !message) {
+    if (!name || !email || !company_name || !job_title || !message) {
       return NextResponse.json(
         { error: "All fields are required" },
         { status: 400 }
@@ -23,8 +23,8 @@ export async function POST(req: Request) {
     const mailOptions = {
       from: process.env.EMAIL_USER,
       to: "luke.manongsong@gmail.com",
-      subject: "New message from Job Vortex",
-      text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+      subject: "Employer Message",
+      text: `Name: ${name}\nEmail: ${email}\nCompany: ${company_name}\nPosition: ${job_title}\nMessage: ${message}`,
     };
 
     await transporter.sendMail(mailOptions);
