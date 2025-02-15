@@ -65,14 +65,16 @@ export default function Contact() {
   return (
     <>
       <NavBar />
-      <div className="flex flex-col md:flex-row justify-around items-center px-6 md:px-12 py-8 space-y-6 md:space-y-0">
-        <Image
-          src="/message.svg"
-          alt="contact"
-          width={400}
-          height={600}
-          className="object-cover w-full max-w-xs md:max-w-sm"
-        />
+      <div className="flex flex-col md:flex-row justify-around items-center px-2 md:px-12 py-8 space-y-6 md:space-y-0">
+        <div className="relative">
+          <Image
+            src="/message.svg"
+            alt="contact"
+            width={400}
+            height={400}
+            className="object-cover"
+          />
+        </div>
         <div className="border-gray-300 p-6 w-full max-w-lg md:max-w-[900px] mx-auto">
           <h1 className="text-2xl md:text-4xl font-bold mb-6 text-center md:text-left">
             Contact Us
