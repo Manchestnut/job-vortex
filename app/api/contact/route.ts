@@ -24,7 +24,7 @@ export async function POST(req: Request) {
 
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: "luke.manongsong@gmail.com",
+      to: process.env.EMAIL_USER,
       subject: "New message from Job Vortex",
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
     };
