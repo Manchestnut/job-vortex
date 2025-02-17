@@ -33,7 +33,7 @@ export async function POST(req: Request) {
 
     const mailOptionsToCompany = {
       from: process.env.EMAIL_USER,
-      to: email,
+      to: process.env.EMAIL_USER,
       subject: `${job_title} - ${full_name}`,
       text: `You received a new job application for ${job_title}.
 

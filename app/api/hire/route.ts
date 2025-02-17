@@ -66,19 +66,19 @@ export async function POST(req: Request) {
       to: email,
       subject: "Job Vortex - Message Received",
       html: `
-        <div style="background-color: #f4f4f4; padding: 20px;">
-          <div style="max-width: 600px; background: #ffffff; padding: 20px; border-radius: 8px; margin: auto; box-shadow: 0px 4px 8px rgba(0,0,0,0.1); text-align: center;">
-            <h2 style="color: #2c3e50;">Job Vortex</h2>
-            <p style="font-size: 16px; color: #333;">Hi ${name},</p>
-            <p style="font-size: 16px; color: #555;">
-              Thank you for reaching out to <strong>Job Vortex</strong>. We have received your message and will respond within <strong>3 business days</strong>.
-            </p>
-            <p style="font-size: 16px; color: #555;">We appreciate your patience and look forward to assisting you.</p>
-            <p style="font-size: 16px; color: #333;">Best Regards,<br><strong>Job Vortex Team</strong></p>
-          </div>
+        <div style="font-family: Arial, sans-serif; color: #333; line-height: 1.6;">
+          <p>Hi <strong>${name}</strong>,</p>
+          
+          <p>Thank you for reaching out to <strong>Job Vortex</strong>. We have received your message and will respond within <strong>3 business days</strong>.</p>
+          
+          <p>We appreciate your patience and look forward to assisting you.</p>
+          
+          <p style="margin-top: 20px;"><strong>Best regards,</strong><br>
+          <span style="color: #2c3e50;">Job Vortex Team</span></p>
         </div>
       `,
     };
+    
     
     
 
