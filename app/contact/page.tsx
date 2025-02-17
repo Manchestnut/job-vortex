@@ -53,9 +53,9 @@ export default function Contact() {
         body: JSON.stringify(formData),
       });
       if (response.ok) {
-        alert("Application submitted successfully!");
+        alert("Email sent successfully!");
       } else {
-        alert("Error submitting application.");
+        alert("Error sending email.");
       }
     } catch (error) {
       console.error("Error submitting form:", error);

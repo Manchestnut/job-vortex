@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { ImSpinner2 } from "react-icons/im";
 
 interface JobApplicationFormProps {
   job: {
@@ -14,6 +15,7 @@ const JobApplicationForm: React.FC<JobApplicationFormProps> = ({ job }) => {
     contact_number: "",
     resume: null as File | null,
   });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.type === "file") {
@@ -25,7 +27,7 @@ const JobApplicationForm: React.FC<JobApplicationFormProps> = ({ job }) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
+    setLoading(true);
     // reCAPTCHA validation
     const grecaptcha = window.grecaptcha;
 
@@ -71,6 +73,7 @@ const JobApplicationForm: React.FC<JobApplicationFormProps> = ({ job }) => {
     } else {
       alert("Error submitting application.");
     }
+    setLoading(false);
   };
   return (
     <div className="border-2 border-gray-300 rounded p-6">
@@ -123,8 +126,13 @@ const JobApplicationForm: React.FC<JobApplicationFormProps> = ({ job }) => {
         <button
           type="submit"
           className="w-full bg-[#154c79] text-white rounded p-3"
+          disabled={loading}
         >
-          Submit
+          {loading ? (
+            <ImSpinner2 className="animate-spin inline-block" />
+          ) : (
+            "Submit"
+          )}
         </button>
       </form>
     </div>

@@ -13,7 +13,9 @@ export async function POST(req: Request) {
     }
 
     const transporter = nodemailer.createTransport({
-      service: "gmail",
+      host: process.env.SMTP_HOST,
+      port: 465,
+      secure: true,
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
@@ -22,14 +24,14 @@ export async function POST(req: Request) {
 
     const mailOptionsToCompany = {
       from: process.env.EMAIL_USER,
-      to: "luke.manongsong@gmail.com", // Job Vortex email
-      subject: "New Employer Inquiry",
+      to: process.env.EMAIL_USER,
+      subject: "Employer Inquiry",
       html: `
         <div style="background-color: #f4f4f4; padding: 20px;">
-          <div style="max-width: 600px; background: #ffffff; padding: 20px; border-radius: 8px; margin: auto; box-shadow: 0px 4px 8px rgba(0,0,0,0.1);">
-            <h2 style="color: #2c3e50; text-align: center;">New Employer Inquiry</h2>
+          <div style="max-width: 600px; background: #ffffff; padding: 20px; border-radius: 8px; margin: auto; box-shadow: 0px 4px 8px rgba(0,0,0,0.1); text-align: center;">
+            <h2 style="color: #2c3e50;">Employer Inquiry</h2>
             <p style="font-size: 16px; color: #333;">You have received a new message from an employer.</p>
-            <table style="width: 100%; border-collapse: collapse;">
+            <table style="width: 100%; border-collapse: collapse; text-align: left;">
               <tr>
                 <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Name:</strong></td>
                 <td style="padding: 8px; border-bottom: 1px solid #ddd;">${name}</td>
@@ -58,14 +60,15 @@ export async function POST(req: Request) {
       `,
     };
     
+    
     const mailOptionsToEmployer = {
       from: process.env.EMAIL_USER,
       to: email,
       subject: "Job Vortex - Message Received",
       html: `
         <div style="background-color: #f4f4f4; padding: 20px;">
-          <div style="max-width: 600px; background: #ffffff; padding: 20px; border-radius: 8px; margin: auto; box-shadow: 0px 4px 8px rgba(0,0,0,0.1);">
-            <h2 style="color: #2c3e50; text-align: center;">Job Vortex</h2>
+          <div style="max-width: 600px; background: #ffffff; padding: 20px; border-radius: 8px; margin: auto; box-shadow: 0px 4px 8px rgba(0,0,0,0.1); text-align: center;">
+            <h2 style="color: #2c3e50;">Job Vortex</h2>
             <p style="font-size: 16px; color: #333;">Hi ${name},</p>
             <p style="font-size: 16px; color: #555;">
               Thank you for reaching out to <strong>Job Vortex</strong>. We have received your message and will respond within <strong>3 business days</strong>.
@@ -76,6 +79,7 @@ export async function POST(req: Request) {
         </div>
       `,
     };
+    
     
 
     await transporter.sendMail(mailOptionsToCompany);

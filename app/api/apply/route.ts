@@ -22,16 +22,18 @@ export async function POST(req: Request) {
     const resumeBuffer = Buffer.from(await resume.arrayBuffer());
 
     const transporter = nodemailer.createTransport({
-      service: "gmail",
+      host: process.env.SMTP_HOST, 
+      port: 465, 
+      secure: true,
       auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        user: process.env.EMAIL_USER, 
+        pass: process.env.EMAIL_PASS, 
       },
     });
 
     const mailOptionsToCompany = {
       from: process.env.EMAIL_USER,
-      to: process.env.RECIPIENT_EMAIL,
+      to: email,
       subject: `${job_title} - ${full_name}`,
       text: `You received a new job application for ${job_title}.
 
@@ -51,19 +53,27 @@ export async function POST(req: Request) {
     };
 
     const mailOptionsToApplicant = {
-      from: process.env.RECIPIENT_EMAIL,
+      from: process.env.EMAIL_USER,
       to: email,
       subject: `Job Vortex - Application for ${job_title}`,
-      text: `Hi ${full_name},
-      
-      You have successfully applied for the position of ${job_title}.
-      Your resume will be reviewed by our recruitment team, and if you are selected for an interview or if further information is needed,
-      a recruiter will contact you. We aim to get back to you regarding your application within 3 weeks.
-
-      Best regards,
-      Job Vortex Recruitment Team
+      html: `
+        <div style="font-family: Arial, sans-serif; color: #333; line-height: 1.6;">
+          <p>Hi <strong>${full_name}</strong>,</p>
+          
+          <p>Thank you for applying for the position of <strong>${job_title}</strong> at Job Vortex.</p>
+          
+          <p>We have received your application, and our recruitment team will review your resume. If you are shortlisted for an interview or if we require additional information, a recruiter will reach out to you.</p>
+    
+          <p><strong>We aim to provide an update on your application within three weeks.</strong></p>
+    
+          <p>If you have any questions in the meantime, feel free to contact us.</p>
+    
+          <p style="margin-top: 20px;"><strong>Best regards,</strong><br>
+          <span style="color: #2c3e50;">Job Vortex Recruitment Team</span></p>
+        </div>
       `,
     };
+    
 
     await transporter.sendMail(mailOptionsToCompany);
     await transporter.sendMail(mailOptionsToApplicant);

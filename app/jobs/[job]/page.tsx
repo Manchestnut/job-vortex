@@ -54,7 +54,7 @@ export default async function Job({ params }: Props) {
   return (
     <>
       <NavBar />
-      <div className="md:px-6 px-2 pt-10">
+      <div className="md:px-6 px-2 py-10">
         <h1 className="text-3xl font-bold mb-4 text-center">{job.job_title}</h1>
         <div className="md:px-6 pt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className=" rounded p-4">
