@@ -68,6 +68,8 @@ export async function POST(req: Request) {
           <p>Hi <strong>${name}</strong>,</p>
           
           <p>This is a system-generated email to confirm that we have received your message. Someone from our team will respond within this week.</p>
+
+          <p>If you have any questions in the meantime, feel free to contact us at info@jobvortex.com.</p>
           
           <p>We appreciate your patience and look forward to assisting you.</p>
           
