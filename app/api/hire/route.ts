@@ -13,18 +13,16 @@ export async function POST(req: Request) {
     }
 
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: 465,
-      secure: true,
+      service: "gmail",
       auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        user: process.env.EMAIL_USER, 
+        pass: process.env.EMAIL_PASS, 
       },
     });
 
     const mailOptionsToCompany = {
       from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_USER,
+      to: 'info@jobvortex.com',
       subject: "Employer Inquiry",
       html: `
         <div style="background-color: #f4f4f4; padding: 20px;">
@@ -69,7 +67,7 @@ export async function POST(req: Request) {
         <div style="font-family: Arial, sans-serif; color: #333; line-height: 1.6;">
           <p>Hi <strong>${name}</strong>,</p>
           
-          <p>Thank you for reaching out to <strong>Job Vortex</strong>. We have received your message and will respond within <strong>3 business days</strong>.</p>
+          <p>This is a system-generated email to confirm that we have received your message. Someone from our team will respond within this week.</p>
           
           <p>We appreciate your patience and look forward to assisting you.</p>
           
@@ -78,6 +76,7 @@ export async function POST(req: Request) {
         </div>
       `,
     };
+    
     
     
     

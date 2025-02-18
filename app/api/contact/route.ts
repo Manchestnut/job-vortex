@@ -13,9 +13,7 @@ export async function POST(req: Request) {
     }
 
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST, 
-      port: 465, 
-      secure: true,
+      service: "gmail",
       auth: {
         user: process.env.EMAIL_USER, 
         pass: process.env.EMAIL_PASS, 
@@ -24,10 +22,22 @@ export async function POST(req: Request) {
 
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_USER,
-      subject: "New message from Job Vortex",
-      text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+      to: 'info@jobvortex.com',
+      subject: "New Message from Job Vortex - General Inquiry",
+      html: `
+        <div style="font-family: Arial, sans-serif; color: #333; line-height: 1.6;">
+          <h2 style="color: #2c3e50;">New Message from Job Vortex</h2>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Message:</strong></p>
+          <blockquote style="background-color: #f9f9f9; border-left: 4px solid #2c3e50; padding: 10px 20px; font-style: italic; color: #555;">
+            ${message}
+          </blockquote>
+          <p style="margin-top: 20px;">This is an automated message from the Job Vortex website contact form.</p>
+        </div>
+      `,
     };
+    
 
     await transporter.sendMail(mailOptions);
 
