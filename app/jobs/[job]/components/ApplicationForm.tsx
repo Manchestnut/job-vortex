@@ -16,10 +16,24 @@ const JobApplicationForm: React.FC<JobApplicationFormProps> = ({ job }) => {
     resume: null as File | null,
   });
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.type === "file") {
-      setFormData({ ...formData, resume: e.target.files?.[0] || null });
+      const file = e.target.files?.[0];
+
+      if (file) {
+        const allowedTypes = ["application/pdf", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"];
+        
+        if (!allowedTypes.includes(file.type)) {
+          setError("Only PDF and DOCX files are allowed.");
+          setFormData({ ...formData, resume: null });
+          return;
+        }
+        
+        setError(""); // Clear error if valid
+        setFormData({ ...formData, resume: file });
+      }
     } else {
       setFormData({ ...formData, [e.target.name]: e.target.value });
     }
@@ -27,10 +41,14 @@ const JobApplicationForm: React.FC<JobApplicationFormProps> = ({ job }) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!formData.resume) {
+      setError("Please upload a valid PDF or DOCX file.");
+      return;
+    }
     setLoading(true);
+
     // reCAPTCHA validation
     const grecaptcha = window.grecaptcha;
-
     if (!grecaptcha) {
       alert("reCAPTCHA failed to load.");
       return;
@@ -50,6 +68,7 @@ const JobApplicationForm: React.FC<JobApplicationFormProps> = ({ job }) => {
     const recaptchaData = await recaptchaResponse.json();
     if (!recaptchaData.success) {
       alert("reCAPTCHA validation failed. Please try again.");
+      setLoading(false);
       return;
     }
 
@@ -75,6 +94,7 @@ const JobApplicationForm: React.FC<JobApplicationFormProps> = ({ job }) => {
     }
     setLoading(false);
   };
+
   return (
     <div className="border-2 border-gray-300 rounded p-6">
       <h1 className="text-xl font-bold mb-6">Submit your Application</h1>
@@ -113,15 +133,16 @@ const JobApplicationForm: React.FC<JobApplicationFormProps> = ({ job }) => {
           />
         </div>
         <div>
-          <label className="block mb-2 font-medium">Resume (PDF only)</label>
+          <label className="block mb-2 font-medium">Resume (PDF or DOCX only)</label>
           <input
             type="file"
             name="resume"
-            accept="application/pdf"
+            accept=".pdf,.docx"
             className="w-full border-2 border-gray-300 rounded p-3 focus:outline-none focus:border-blue-500"
             onChange={handleChange}
             required
           />
+          {error && <p className="text-red-500 mt-2">{error}</p>}
         </div>
         <button
           type="submit"
