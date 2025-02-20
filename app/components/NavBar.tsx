@@ -22,7 +22,7 @@ export default function NavBar() {
           <div className="hidden md:flex md:gap-2">
             <Link href={`/jobs/`} rel="noopener noreferrer"><button className="px-3 py-1 rounded-lg flex items-center gap-2 text-lg text-gray-700 hover:underline">Apply <FaArrowRightLong className="text-sm"/></button></Link>
             <Link href={`/employer/`} rel="noopener noreferrer"><button className="px-3 py-1 rounded-lg flex items-center gap-2 text-lg text-gray-700 hover:underline">Hire <FaArrowRightLong className="text-sm"/></button></Link>
-            <Link href={`/`} rel="noopener noreferrer"><button className="px-3 py-1 rounded-lg flex items-center gap-2 text-lg text-gray-700 hover:underline">About</button></Link>
+            <Link href={`/about`} rel="noopener noreferrer"><button className="px-3 py-1 rounded-lg flex items-center gap-2 text-lg text-gray-700 hover:underline">About</button></Link>
             <Link href={`/contact`} rel="noopener noreferrer"><button className="px-3 py-1 rounded-lg flex items-center gap-2 text-lg text-gray-700 hover:underline">Contact</button></Link>
           </div>
 
@@ -31,7 +31,7 @@ export default function NavBar() {
             <div className="absolute top-full left-0 w-full bg-white shadow-md p-4 flex flex-col items-center gap-2 md:hidden z-50">
               <Link href={`/jobs/`} rel="noopener noreferrer"><button className="px-3 py-1 rounded-lg flex items-center gap-2 text-lg text-gray-700 hover:underline">Apply <FaArrowRightLong className="text-sm"/></button></Link>
               <Link href={`/employer/`} rel="noopener noreferrer"><button className="px-3 py-1 rounded-lg flex items-center gap-2 text-lg text-gray-700 hover:underline">Hire <FaArrowRightLong className="text-sm"/></button></Link>
-              <Link href={`/`} rel="noopener noreferrer"><button className="px-3 py-1 rounded-lg flex items-center gap-2 text-lg text-gray-700 hover:underline">About</button></Link>
+              <Link href={`/about`} rel="noopener noreferrer"><button className="px-3 py-1 rounded-lg flex items-center gap-2 text-lg text-gray-700 hover:underline">About</button></Link>
               <Link href={`/contact`} rel="noopener noreferrer"><button className="px-3 py-1 rounded-lg flex items-center gap-2 text-lg text-gray-700 hover:underline">Contact</button></Link>
             </div>
           )}

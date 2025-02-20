@@ -13,7 +13,7 @@ export default function Home() {
 
         {/* Landing */}
         <main className="">
-          <div className="text-center w-fit mx-auto py-10 text-gray-800">
+          <div className="text-center w-fit mx-auto py-10 text-[#0c315e]">
             <h1 className="font-extrabold md:text-6xl text-4xl py-8">
               Connecting talent <br />
               with
