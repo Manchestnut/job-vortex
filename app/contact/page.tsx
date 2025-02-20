@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import { useState } from "react";
 import { ImSpinner2 } from "react-icons/im";
+import Head from "next/head";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -64,18 +65,38 @@ export default function Contact() {
   };
   return (
     <>
+      <Head>
+        <title>Contact Us - Job Vortex</title>
+        <meta
+          name="description"
+          content="Get in touch with Job Vortex for recruitment solutions."
+        />
+        <meta
+          name="keywords"
+          content="contact, recruitment, hiring, job seekers, employers"
+        />
+        <meta name="author" content="Job Vortex" />
+        <meta property="og:title" content="Contact Us - Job Vortex" />
+        <meta
+          property="og:description"
+          content="Find your perfect job with Job Vortex."
+        />
+        <meta property="og:image" content="/message.svg" />
+        <meta property="og:url" content="https://jobvortex.com/contact" />
+      </Head>
       <NavBar />
-      <div className="flex flex-col md:flex-row justify-around items-center px-2 md:px-12 py-8 space-y-6 md:space-y-0">
-        <div className="relative">
+      <div className="flex flex-col md:flex-row justify-between items-center px-2 md:px-12 py-8 md:max-w-[1200px] mx-auto">
+        <div className="w-full md:w-1/2 flex md:justify-center">
           <Image
             src="/message.svg"
             alt="contact"
             width={400}
             height={400}
+            priority
             className="object-cover"
           />
         </div>
-        <div className="border-gray-300 p-6 w-full max-w-lg md:max-w-[900px] mx-auto">
+        <div className="border-gray-300 p-6 w-full max-w-lg md:max-w-[600px] mx-auto">
           <h1 className="text-2xl md:text-4xl font-bold mb-6 text-center md:text-left">
             Contact Us
           </h1>
